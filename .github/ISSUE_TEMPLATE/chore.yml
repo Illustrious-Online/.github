@@ -1,0 +1,56 @@
+name: Chore
+description: Setup, scaffolding, config, refactor, or infrastructure task
+title: "[Chore] "
+labels: ["type:chore", "status:ready"]
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - "Phase 1 — Foundation"
+        - "Phase 2 — OSS Launch"
+        - "Phase 3 — Cloud Platform"
+        - "Phase 4 — Scale & Ecosystem"
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service / Area
+      options:
+        - auth
+        - dashboard
+        - games
+        - billing
+        - notification
+        - tech
+        - ui
+        - infra
+        - platform
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be done?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] CI passes
+        - [ ] PR reviewed and merged
+    validations:
+      required: true
+  - type: input
+    id: epic
+    attributes:
+      label: Parent Epic
+      placeholder: "#12"
+    validations:
+      required: false

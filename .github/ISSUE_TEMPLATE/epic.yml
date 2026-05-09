@@ -1,0 +1,61 @@
+name: Epic
+description: A parent issue grouping related features or tasks for a phase
+title: "[Epic] "
+labels: ["type:epic", "status:needs-design"]
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - "Phase 1 — Foundation"
+        - "Phase 2 — OSS Launch"
+        - "Phase 3 — Cloud Platform"
+        - "Phase 4 — Scale & Ecosystem"
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Primary Service
+      options:
+        - auth
+        - dashboard
+        - games
+        - billing
+        - notification
+        - tech
+        - ui
+        - infra
+        - platform
+      multiple: false
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What does this epic accomplish and why does it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: Subtasks
+      description: List child issues as a task list. Update this body as issues are created.
+      placeholder: |
+        - [ ] #1 Short description
+        - [ ] #2 Short description
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What does "done" look like for this epic?
+      placeholder: |
+        - [ ] All child issues closed
+        - [ ] Feature deployed to staging
+        - [ ] No regressions in CI
+    validations:
+      required: true

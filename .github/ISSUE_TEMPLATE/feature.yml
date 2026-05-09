@@ -1,0 +1,68 @@
+name: Feature
+description: A new capability or user-facing improvement
+title: "[Feature] "
+labels: ["type:feature", "status:ready"]
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - "Phase 1 — Foundation"
+        - "Phase 2 — OSS Launch"
+        - "Phase 3 — Cloud Platform"
+        - "Phase 4 — Scale & Ecosystem"
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service
+      options:
+        - auth
+        - dashboard
+        - games
+        - billing
+        - notification
+        - tech
+        - ui
+        - infra
+        - platform
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - critical
+        - high
+        - medium
+        - low
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be built and why?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] CI passes (Biome + type-check + bun test)
+        - [ ] PR reviewed and merged
+    validations:
+      required: true
+  - type: input
+    id: epic
+    attributes:
+      label: Parent Epic
+      placeholder: "#12"
+    validations:
+      required: false

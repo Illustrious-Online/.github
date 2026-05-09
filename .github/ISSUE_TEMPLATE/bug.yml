@@ -1,0 +1,68 @@
+name: Bug Report
+description: Something is broken or not working as expected
+title: "[Bug] "
+labels: ["type:bug", "priority:high"]
+body:
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service / Area
+      options:
+        - auth
+        - dashboard
+        - games
+        - billing
+        - notification
+        - tech
+        - ui
+        - infra
+        - platform
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - critical
+        - high
+        - medium
+        - low
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's broken?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Go to...
+        2. Click...
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Logs, screenshots, environment details
+    validations:
+      required: false
